@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Customer App</title>
+
+    <!-- EasyUI & jQuery -->
+    <link rel="stylesheet" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+
+        <div class="error-msg" id="error-msg" style="display: none;"></div>
+
+        <input class="easyui-textbox" name="username" id="username" prompt="Username" required="true">
+        <input class="easyui-passwordbox" name="password" id="password" prompt="Password" required="true">
+
+        <a href="javascript:void(0)" class="easyui-linkbutton login-btn" onclick="submitLogin()">Login</a>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

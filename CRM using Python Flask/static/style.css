@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 12px;
+    color: #3498db;
+    text-transform: uppercase;
+}
+
+#toolbar {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.easyui-linkbutton {
+    margin: 0 6px;
+}
+
+.scrollable-table {
+    overflow-x: auto;
+}
+
+#dg {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.datagrid-header-row, .datagrid-row {
+    font-size: 14px;
+}
+
+.datagrid-header {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.datagrid-row-alt {
+    background-color: #f9f9f9;
+}
+
+.datagrid-row-over {
+    background-color: #d6f0ff !important;
+}
+
+.datagrid-cell {
+    padding: 10px !important;
+}
+
+.datagrid-header .datagrid-cell {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.datagrid-row-selected {
+    background-color: #d1ecf1 !important;
+}
+.login-box {
+    width: 350px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    margin: auto;
+    margin-top: 10vh;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.easyui-textbox,
+.easyui-passwordbox {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    width: 100%;
+}
+
+.error-msg {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+

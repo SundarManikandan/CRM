@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Management</title>
+    
+    <!-- EasyUI & jQuery -->
+    <link rel="stylesheet" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Customer List</h2>
+
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" onclick="addRow()">Add</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" onclick="editRow()">Edit</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-save" onclick="saveRow()">Save</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" onclick="deleteRow()">Delete</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" onclick="downloadPDF()">Download PDF</a>
+    </div>
+
+    <div class="scrollable-table">
+        <table id="dg" class="easyui-datagrid"
+               url="{{ url_for('get_users') }}"
+               pagination="true"
+               rownumbers="true"
+               fitColumns="false"
+               singleSelect="true"
+               height="400"
+               toolbar="#toolbar">
+            <thead>
+            <tr>
+                <th field="id" hidden="true">ID</th>
+                <th field="name" width="120" editor="text">Name</th>
+                <th field="mobile" width="120" editor="text">Mobile</th>
+                <th field="email" width="200" editor="text">Email</th>
+                <th field="gstin" width="160" editor="text">GSTIN</th>
+                <th field="address" width="200" editor="text">Address</th>
+                <th field="pincode" width="100" editor="text">Pincode</th>
+                <th field="contact_person" width="150" editor="text">Contact Person</th>
+                <th field="company" width="150" editor="text">Company</th>
+                <th field="state" width="130" editor="{type:'combobox',options:{valueField:'value',textField:'label',panelHeight:'auto',data:[
+                            {label:'Maharashtra',value:'Maharashtra'},
+                            {label:'Karnataka',value:'Karnataka'},
+                            {label:'Delhi',value:'Delhi'},
+                            {label:'Tamil Nadu',value:'Tamil Nadu'},
+                            {label:'Gujarat',value:'Gujarat'},
+                            {label:'Punjab',value:'Punjab'},
+                            {label:'West Bengal',value:'West Bengal'},
+                            {label:'Uttar Pradesh',value:'Uttar Pradesh'},
+                            {label:'Rajasthan',value:'Rajasthan'}
+                        ]}}">State</th>
+                <th field="country" width="120" editor="{type:'combobox',options:{valueField:'value',textField:'label',panelHeight:'auto',data:[
+                            {label:'India',value:'India'},
+                            {label:'USA',value:'USA'},
+                            {label:'UK',value:'UK'},
+                            {label:'Canada',value:'Canada'},
+                            {label:'Germany',value:'Germany'},
+                            {label:'Australia',value:'Australia'},
+                            {label:'Singapore',value:'Singapore'},
+                            {label:'France',value:'France'},
+                            {label:'Japan',value:'Japan'}
+                        ]}}">Country</th>
+                <th field="status" width="100" editor="{type:'combobox',options:{valueField:'value',textField:'label',panelHeight:'auto',data:[
+                            {label:'Active',value:'Active'},
+                            {label:'Inactive',value:'Inactive'}
+                        ]}}">Status</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
